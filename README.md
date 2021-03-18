@@ -1,4 +1,4 @@
-# vue-project
+# vue-project is Vue3 Example
 
 ## Project setup
 ```
