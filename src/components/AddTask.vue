@@ -2,14 +2,14 @@
   <form @submit="onSubmit" class="add-form">
     <div class="form-control">
       <label>Task</label>
-      <input type="text" v-model="text" name="text" placeholder="Add Task" />
+      <input type="text" v-model="newsUrl" name="newsUrl" placeholder="Add Task" />
     </div>
     <div class="form-control">
       <label>Day & Time</label>
       <input
         type="text"
-        name="day"
-        v-model="day"
+        name="newsDate"
+        v-model="newsDate"
         placeholder="Add Day & Time"
       />
     </div>
@@ -31,8 +31,8 @@ export default{
     name: 'AddTask',
     data() {
         return {
-            text: '',
-            day: '',
+            newsUrl: '',
+            newsDate: '',
             reminder: false
         }
     },
@@ -47,15 +47,15 @@ export default{
 
             const newTask = {
                 id: Math.floor(Math.random() * 100000),
-                text: this.text,
-                day: this.day,
+                newsUrl: this.newsUrl,
+                newsDate: this.newsDate,
                 reminder: this.reminder
             }
 
             this.$emit('add-task', newTask)
 
-            this.text = ''
-            this.day = ''
+            this.newsUrl = ''
+            this.newsDate = ''
             this.reminder = false
 
             console.log(newTask)
